@@ -18,6 +18,8 @@ def generate_secret():
     secret = pyotp.random_base32()
     totp = pyotp.TOTP(secret)
     uri = totp.provisioning_uri(name="user@example.com", issuer_name="MyApp")
+    # Change above line to use your own email and app name to embed in the QR code
+    # Google Authenticator allows these values to be edited by swiping left
     print(f"Secret: {secret}")
     print("Scan this QR code with Google Authenticator:")
     qr = qrcode.QRCode()
@@ -35,7 +37,8 @@ def show_totp(secret, verbose=False):
     """
     totp = pyotp.TOTP(secret)
     now = int(time.time())
-    interval = now // 30 # 30 second intervals - same as Google Authenticator
+    time_remaining = 30 - (now % 30)
+    interval = now // 30  # 30 second intervals - same as Google Authenticator
     key = base64.b32decode(secret, True)
     msg = interval.to_bytes(8, 'big')
     h = hmac.new(key, msg, hashlib.sha1).digest()
@@ -45,7 +48,7 @@ def show_totp(secret, verbose=False):
               (h[offset + 2] & 0xff) << 8 |
               (h[offset + 3] & 0xff))
     otp = binary % 1000000
-    print(f"TOTP: {otp:06d}")
+    print(f"TOTP: {otp:06d} (valid for {time_remaining}s)")
     if verbose:
         print(f"Raw HMAC hash (hex): {h.hex()}")
         print(f"Offset: {offset}")
