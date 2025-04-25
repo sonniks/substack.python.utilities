@@ -66,7 +66,7 @@ def chroma_key(fg, bg, keycolor, tolerance, white_protect=180):
 
 def process(inputfile, outputfile, keycolor, workdir, sequence_prefix, tolerance=30, background_sequence=None):
     """
-    Process an image or video sequence with chroma key effect.
+Process a single image or a sequence of images for chroma keying.
     :param inputfile:
     :param outputfile:
     :param keycolor:
@@ -91,20 +91,40 @@ def process(inputfile, outputfile, keycolor, workdir, sequence_prefix, tolerance
             print(f"Error processing single image: {e}")
     else:
         fg_frames = sorted(glob.glob(os.path.join(inputfile, f"{sequence_prefix}_*.png")))
-        bg_frames = sorted(glob.glob(os.path.join(background_sequence, f"{sequence_prefix}_*.png"))) if background_sequence else []
         if not fg_frames:
             print(f"Error: No foreground frames found in {inputfile}")
             return
-        if not bg_frames:
-            print(f"Error: No background sequence found in {background_sequence}")
+        use_static = False
+        static_bg = None
+        bg_frames = []
+        if background_sequence:
+            if os.path.isfile(background_sequence):
+                try:
+                    static_bg = Image.open(background_sequence)
+                    use_static = True
+                    log(f"Using static background image: {background_sequence}")
+                except Exception as e:
+                    print(f"Error loading static background: {e}")
+                    return
+            elif os.path.isdir(background_sequence):
+                bg_frames = sorted(glob.glob(os.path.join(background_sequence, f"{sequence_prefix}_*.png")))
+                if not bg_frames:
+                    print(f"Error: No background sequence found in {background_sequence}")
+                    return
+                log(f"Using background frame sequence from: {background_sequence}")
+            else:
+                print(f"Error: Invalid background path: {background_sequence}")
+                return
+        else:
+            print("Error: No background sequence or static background provided.")
             return
-        frame_count = min(len(fg_frames), len(bg_frames))
+        frame_count = len(fg_frames) if use_static else min(len(fg_frames), len(bg_frames))
         for i in range(frame_count):
             try:
                 if i % 30 == 0 or i == frame_count - 1:
                     log(f"Processing frame {i + 1} of {frame_count}")
                 fg = Image.open(fg_frames[i])
-                bg = Image.open(bg_frames[i])
+                bg = static_bg.copy() if use_static else Image.open(bg_frames[i])
                 fg, bg = resize_to_match(fg, bg)
                 result = chroma_key(fg, bg, key_rgb, tolerance)
                 out_path = os.path.join(workdir, f"{sequence_prefix}_{i:04}.png")
