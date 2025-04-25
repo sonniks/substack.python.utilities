@@ -4,6 +4,13 @@ import os
 import glob
 
 def extract_frames(video_path, output_dir, prefix):
+    """
+    Extract frames from a video file and save them as images in the specified directory.
+    :param video_path:
+    :param output_dir:
+    :param prefix:
+    :return:
+    """
     if not os.path.exists(video_path):
         print(f"Error: Video not found: {video_path}")
         return False
@@ -27,6 +34,14 @@ def extract_frames(video_path, output_dir, prefix):
     return success
 
 def frames_to_video(input_dir, prefix, output_path, fps=30):
+    """
+    Convert a sequence of images into a video file.
+    :param input_dir:
+    :param prefix:
+    :param output_path:
+    :param fps:
+    :return:
+    """
     pattern = os.path.join(input_dir, f"{prefix}_*.png")
     images = sorted(glob.glob(pattern))
     if not images:

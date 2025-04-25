@@ -72,6 +72,12 @@ def apply_light(negative_image, light_color_rgb):
     return None
 
 def save_image(image, filename):
+    """
+    Save the image to the specified filename.
+    :param image:
+    :param filename:
+    :return:
+    """
     if image is None or not filename:
         print("Error: Invalid image or filename.")
         return False
