@@ -1,0 +1,5 @@
+#windows
+pillow
+pyzbar
+qrcode[pil]
+pywin32
