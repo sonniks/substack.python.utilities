@@ -1,0 +1,1 @@
+See full article at https://sonnik.substack.com/p/reading-qr-codes-on-desktop-screens
