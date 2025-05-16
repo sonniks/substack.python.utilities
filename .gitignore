@@ -1,2 +1,5 @@
-/Test-Code/upscaler/
-/video-upscaler-resrgan/inputvideo1.mp4
+/Test-Code/upscaler/**
+/video-upscaler-resrgan/*.mp4
+/Test-Code/upscaler/Real-ESRGAN/**
+/video-upscaler-resrgan/Real-ESRGAN/**
+

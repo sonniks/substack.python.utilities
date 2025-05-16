@@ -1,1 +1,1 @@
-See https://sonnik.substack.com for more details.
+See https://open.substack.com/pub/sonnik/p/what-you-leave-behind-in-480p for more details.

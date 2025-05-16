@@ -144,21 +144,35 @@ def reassemble_video_alt(upscale_dir, output_file, fps):
 
 
 def cleanup_dirs(*dirs):
+    """
+    Clean up temporary directories.
+    :param dirs:
+    :return:
+    """
     for d in dirs:
         if os.path.exists(d):
             shutil.rmtree(d)
 
-def main():
+
+def parse_args():
     """
-    Main function to handle command line arguments and orchestrate the video upscaling process.
-    :return:
+    Parse command-line arguments for the video upscaler.
+    :return: argparse.Namespace with parsed arguments
     """
     parser = argparse.ArgumentParser(description="Video Upscaler with Real-ESRGAN")
     parser.add_argument("--inputfile", required=True, help="Input source video file")
     parser.add_argument("--outputfile", required=True, help="Output 1080p video file")
     parser.add_argument("--workdir", required=True, help="Temporary work directory")
     parser.add_argument("--cleanup", action="store_true", help="Delete work directories after processing")
-    args = parser.parse_args()
+    return parser.parse_args()
+
+
+def main():
+    """
+    Main function to handle command line arguments and orchestrate the video upscaling process.
+    :return:
+    """
+    args = parse_args()
     orig_dir = os.path.join(args.workdir, "origframes")
     upscale_dir = os.path.join(args.workdir, "upscaledframes")
     model_path = "Real-ESRGAN/weights/RealESRGAN_x4plus.pth"
