@@ -1,0 +1,4 @@
+This is crawl text [[SEP]] We are looking to see if the characters render correctly [[SEP]]
+This could be a news item [[SEP]]  This could be a sports score [[SEP]]
+This could be a weather report [[SEP]]  This could be a stock price [[SEP]]
+We're at the end of the crawl text [[SEP]]
