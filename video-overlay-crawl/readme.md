@@ -1,1 +1,1 @@
-See https://sonnik.substack.com/ ... link will be provided once post is published (5/29/2025)
+See https://sonnik.substack.com/p/roll-your-own-crawl for full details.
