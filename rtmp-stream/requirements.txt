@@ -1,0 +1,5 @@
+pygame>=2.1.0
+PyYAML>=6.0
+feedparser>=6.0.10
+moviepy>=1.0.3  # optional: only if you plan to experiment with video insertions
+numpy>=1.24.0

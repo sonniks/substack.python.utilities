@@ -78,8 +78,8 @@ def upscale_frames(orig_dir, upscale_dir, model_path):
         img_path = os.path.join(orig_dir, fname)
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
         # Normalize to float32 in [0, 1] — but keep it NumPy
-        if img.dtype != np.float32:
-            img = img.astype(np.float32) / 255.0
+        #if img.dtype != np.float32:
+        #   img = img.astype(np.float32) / 255.0
         start = time.time()
         output, _ = upsampler.enhance(img, outscale=1.5)
         end = time.time()

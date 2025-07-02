@@ -1,0 +1,13 @@
+feeds:
+  - name: The sonnik chronicles
+    url: https://sonnik.substack.com/feed
+
+screen:
+  output_resolution: [1920, 1080]
+  preview_resolution: [854, 480]
+
+streaming:
+  platform: youtube
+  stream_key: YOUR_STREAM_KEY_HERE  # placeholder
+  bitrate: 4500  # in kbps
+  framerate: 30  # in fps

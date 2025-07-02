@@ -1,0 +1,1 @@
+See https://sonnik.substack.com/p/the-charm-of-the-cable-info-channel for more detail

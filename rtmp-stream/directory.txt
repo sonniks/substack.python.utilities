@@ -1,0 +1,16 @@
+stream_overlay/
+├── main.py                         # Entry point with minimal logic
+├── config/
+│   └── config.yaml                # Example or schema for YAML configuration
+├── feeds/
+│   └── substack.py                # Functions to fetch and parse Substack content
+├── graphics/
+│   └── layout_engine.py           # Handles text layout, wrapping, screen-safe rendering
+├── streaming/
+│   └── stream_output.py           # Placeholder for RTMP or mock stream output
+├── utils/
+│   └── config_loader.py           # Reads and validates the YAML config
+├── assets/
+│   └── fonts/                     # Fonts used for display https://dejavu-fonts.github.io/Download.html
+│   └── sounds/                    # Insert wav file here
+└── requirements.txt               # Python dependencies

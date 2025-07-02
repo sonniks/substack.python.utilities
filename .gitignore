@@ -2,4 +2,10 @@
 /video-upscaler-resrgan/*.mp4
 /Test-Code/upscaler/Real-ESRGAN/**
 /video-upscaler-resrgan/Real-ESRGAN/**
-
+/afsk-decoder/**
+/test-code/**
+/video-upscaler-resrgan/dragnet/
+/video-upscaler-resrgan/promo/
+/rtmp-stream/assets/fonts/**
+/rtmp-stream/assets/sounds/**
+/rtmp-stream/config/actual.yaml
