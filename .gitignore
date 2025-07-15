@@ -9,3 +9,7 @@
 /rtmp-stream/assets/fonts/**
 /rtmp-stream/assets/sounds/**
 /rtmp-stream/config/actual.yaml
+/video-upscaler-resrgan/upscale/**
+/video-upscaler-resrgan/M1_t08.mkv
+/google-cloud-voice-api/secret/**
+/google-cloud-voice-api/*.mp3

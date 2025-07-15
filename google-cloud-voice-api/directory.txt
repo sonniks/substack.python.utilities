@@ -1,0 +1,5 @@
+[Parent]
+├── generate.py                 # Default: expects plain text and uses Chirp 3: HD voice
+├── generate-ssml.py            # Expects SSML and uses Neural2 voice
+├── generate-test.py            # Quick script to make sure your API setup and key are working
+└── requirements.txt            # Python dependencies

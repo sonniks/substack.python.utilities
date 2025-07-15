@@ -1,0 +1,32 @@
+<speak>
+  Hello, this is a demonstration of using the Google Cloud Text to Speech engine.
+  <break time="500ms"/>
+  I'm one of the Neural2 voices, which means you can modulate my speech patterns using
+  <say-as interpret-as="characters">SSML</say-as>.
+  <break time="700ms"/>
+  By using <say-as interpret-as="characters">SSML</say-as>, you can format my speech patterns to your liking.
+  <break time="700ms"/>
+  <prosody pitch="+2st">
+    <emphasis level="moderate">For example, I've been instructed to say this line with raised pitch.</emphasis>
+  </prosody>
+  <break time="700ms"/>
+  <prosody rate="slow">
+    <emphasis level="strong">I've been instructed to say this line slowly, with emphasis.</emphasis>
+  </prosody>
+  <break time="700ms"/>
+  <prosody pitch="+4st" volume="loud">
+    <emphasis level="strong">I'm saying this line with raised pitch and volume.</emphasis>
+  </prosody>
+  <break time="700ms"/>
+  Perhaps you need me to read a countdown. Here, I can perform a five second countdown.
+  <break time="300ms"/>
+  <say-as interpret-as="cardinal">5</say-as>
+  <break time="1s"/>
+  <say-as interpret-as="cardinal">4</say-as>
+  <break time="1s"/>
+  <say-as interpret-as="cardinal">3</say-as>
+  <break time="1s"/>
+  <say-as interpret-as="cardinal">2</say-as>
+  <break time="1s"/>
+  <say-as interpret-as="cardinal">1</say-as>.
+</speak>

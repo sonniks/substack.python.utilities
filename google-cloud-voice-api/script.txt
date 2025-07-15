@@ -1,0 +1,26 @@
+This is a script that will highlight features of Google Cloud's Chirp 3 HD Voice generation.
+
+If your text file is authored with a professional style of sentence structure and formatting, the resulting speech will sound more professional. ... At the same time, this may sound a bit more robotic...
+
+However, if you'll change your sentence formatting to something that's a bit more similar to something that you'd use in a text - it becomes a little more relaxed and natural...
+
+Here's an example demonstrating this. We'll start off with something a little more rigid and robotic...
+
+Reservation confirmation.
+Name is Emily Carter.
+Date is August 2nd.
+Time is 7:30 PM.
+Number of guests is 4.
+Restaurant is The Oak Bistro.
+Table number is 16.
+Special note: One guest has a food allergy.
+Please arrive 5 minutes early.
+Call 855-555-9832 for changes.
+
+Now, here is the more natural sounding version...
+
+Hi Emily! Just confirming your reservation at The Oak Bistro—you're all set for 4 guests on August 2nd at 7:30 PM.
+
+You’ll be at table 16, and we’ve noted that someone in your party has a food allergy—thanks for letting us know!
+
+If anything changes, feel free to call us at 855-555-9832. Looking forward to having you!

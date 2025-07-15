@@ -55,6 +55,7 @@ def upscale_frames(orig_dir, upscale_dir, model_path):
     :param model_path:
     :return:
     """
+    # Leave scale at 4 for best quality; we'll resize to 1080p later if needed.
     os.makedirs(upscale_dir, exist_ok=True)
     model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64,
                     num_block=23, num_grow_ch=32, scale=4)
@@ -81,7 +82,10 @@ def upscale_frames(orig_dir, upscale_dir, model_path):
         #if img.dtype != np.float32:
         #   img = img.astype(np.float32) / 255.0
         start = time.time()
-        output, _ = upsampler.enhance(img, outscale=1.5)
+        # change outscale here for the various scaling outputs.
+        output, _ = upsampler.enhance(img, outscale=2)
+        # change this to target output - check aspect ratio! (For example, 1440x1080 for 4:3 on old DVD)
+        output = cv2.resize(output, (1440, 1080), interpolation=cv2.INTER_LANCZOS4)
         end = time.time()
         # Debug output
         # print(f"[TIMING] Inference time: {end - start:.2f} sec")
